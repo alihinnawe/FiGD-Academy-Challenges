@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="MarkdownViewer++" />
+    <title>SQL-Extended-Uebung-MySQL</title>		<meta name="viewport" content="width=device-width, initial-scale=1.0" />		<base target="nebenFenster"/>		<script src="../../Hilfsdateien/folien.js">		</script>		<script id="prism" src="../../Hilfsdateien/prism.js">		</script>		<style type="text/css">
+@import "../../Hilfsdateien/folien.css";
+@import "../../Hilfsdateien/prism.css";
+
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+		</style>
+  </head>
+  <body>
+    <h1 id="sql-ubung-komplexe-abfragen">SQL-Übung, komplexe Abfragen</h1>
+    <p>Listen Sie aus der Nordwind-Datenbank</p>
+    <ol>
+      <li>alle unterschiedlichen Lieferanten aus der Artikel-Tabelle</li>
+    </ol><pre><code>SELECT DISTINCT SupplierID 
+FROM products;</code></pre>
+    <ol start="2">
+      <li>alle unterschiedlichen Lieferanten und Kategorien aus der Artikel-Tabelle</li>
+    </ol><pre><code>SELECT DISTINCT SupplierID, CategoryID 
+FROM products;</code></pre>
+    <ol start="3">
+      <li>alle Personen aus der Kunden-Tabelle, die in Vertriebsabteilungen arbeiten</li>
+    </ol><pre><code>SELECT * 
+FROM customers 
+WHERE ContactTitle LIKE 'Sales%';</code></pre>
+    <ol start="4">
+      <li>alle Kunden aus der Kunden-Tabelle, die Delikat in ihrem Firmennamen haben</li>
+    </ol><pre><code>SELECT *
+FROM customers 
+WHERE CompanyName LIKE '%Delikat%';</code></pre>
+    <ol start="5">
+      <li>alle Kunden aus der Kunden-Tabelle, die keine Faxnummer haben</li>
+    </ol><pre><code>SELECT * 
+FROM customers 
+WHERE Fax IS NULL OR Fax = '';</code></pre>
+    <ol start="6">
+      <li>alle Artikel aus der Artikel-Tabelle, die von den Lieferanten Nr. 3 und 7 geliefert werden und die teurer als 30 sind</li>
+    </ol><pre><code>SELECT * 
+FROM products 
+WHERE (SupplierID=3 OR SupplierID=7) AND UnitPrice &gt;= 30;</code></pre>
+    <ol start="7">
+      <li>alle Bestellungen, die über den Versender Nr. 3 an einem Montag oder Dienstag verschickt wurden</li>
+    </ol><pre><code>SELECT * 
+FROM orders 
+WHERE shipVia = 3 AND DAYNAME(shippedDate) IN ('Monday','Tuesday');</code></pre>
+    <ol start="8">
+      <li>alle Bestellungen, die über den Versender Nr 3 im ersten Halbjahr 1995 verschickt wurden</li>
+    </ol><pre><code>SELECT * 
+FROM orders 
+WHERE shipVia = 3 AND YEAR(shippedDate) = 1995 AND MONTH(shippedDate) &lt;= 6;</code></pre>
+    <ol start="9">
+      <li>die Anzahl aller Bestellungen</li>
+    </ol><pre><code>SELECT COUNT(OrderID) AS Bestellungen 
+FROM orders;</code></pre>
+    <ol start="10">
+      <li>alle Kunden aus der Bestellungen- Tabelle und die Anzahl ihrer Bestellungen</li>
+    </ol><pre><code>SELECT CustomerID, COUNT(OrderID) 
+FROM orders GROUP BY CustomerID;</code></pre>
+    <ol start="11">
+      <li>alle Kunden, die weniger als drei Bestellungen aufgegeben haben</li>
+    </ol><pre><code>SELECT CustomerID, COUNT(OrderID) 
+FROM orders GROUP BY CustomerID HAVING COUNT(OrderID) &lt; 3;</code></pre>
+    <ol start="12">
+      <li>die durchschnittlichen Frachtkosten je Kunde</li>
+    </ol><pre><code>SELECT CustomerID, ROUND(AVG(Freight),2) AS AvgFrachtkosten 
+FROM orders GROUP BY CustomerID;</code></pre>
+    <ol start="13">
+      <li>die durchschnittlichen Frachtkosten je Kunde, die mehr als 50 betragen</li>
+    </ol><pre><code>SELECT CustomerID, ROUND(AVG(Freight),2) AS AvgFrachtkosten 
+FROM orders GROUP BY CustomerID HAVING AvgFrachtkosten &gt; 50;</code></pre>
+    <ol start="14">
+      <li>die durchschnittlichen Frachtkosten je Kunde, die mehr als 50 betragen und über Versender 2 verschickt wurden</li>
+    </ol><pre><code>SELECT CustomerID, ROUND(AVG(Freight),2) AS AvgFrachtkosten 
+FROM orders 
+WHERE shipVia = 2 GROUP BY CustomerID HAVING AVG(Freight) &gt; 50;</code></pre>
+    <ol start="15">
+      <li>die durchschnittlichen Frachtkosten und die Anzahl der Bestellungen je Kunde</li>
+    </ol><pre><code>SELECT CustomerID, ROUND(AVG(Freight), 2) AS AvgFrachtkosten, COUNT(OrderID) AS Anzahl 
+FROM orders GROUP BY CustomerID;</code></pre>
+    <ol start="16">
+      <li>für wie viele Kunden der Mitarbeiter Nr. 5 Bestellungen im August 1994 angenommen hat</li>
+    </ol><pre><code>SELECT COUNT(CustomerID) 
+FROM orders 
+WHERE EmployeeID = 5 AND YEAR(OrderDate) = 1994 AND MONTH(OrderDate) = 8</code></pre>
+    <ol start="17">
+      <li>Artikelliste für die Bestellung 10273 mit Einzelpreis und Gesamtbetrag</li>
+    </ol><pre><code>SELECT ProductID, UnitPrice, Quantity, CONCAT(ROUND(Discount*100,1), '%'), ROUND(Quantity * UnitPrice * (1 - Discount), 2) 
+FROM `order details` 
+WHERE OrderID = 10273
+UNION 
+SELECT '', '','','', ROUND(SUM(Quantity * UnitPrice * (1 - Discount)), 2) 
+FROM `order details` 
+WHERE OrderID = 10273</code></pre>
+    <ol start="18">
+      <li>alle Bestellungen mit Bestelldatum und Anzahl der Tage zwischen Bestellung und Lieferung</li>
+    </ol><pre><code>SELECT OrderID, CustomerID, DATE_FORMAT(OrderDate, '%d.%m.%y (%u.kw)') AS BestDatum, DATEDIFF(ShippedDate, OrderDate) AS Anzahl_Tage 
+FROM orders</code></pre>
+    <ol start="19">
+      <li>alle Artikel, bei zu geringem Mindestbestand (z. B. &lt;10) Hinweis ausgeben</li>
+    </ol><pre><code>SELECT ProductID, ProductName, UnitsInStock, IF(UnitsInStock &lt; 10, 'nachkaufen!','') AS Hinweis 
+FROM products</code></pre>
+    <ol start="20">
+      <li>die Vor- und Nachnamen aller Mitarbeiter und deren Alter in Jahren</li>
+    </ol><pre><code>SELECT FirstName, LastName, DATE_FORMAT(BirthDate, '%d.%m.%y'), TRUNCATE(DATEDIFF(CURDATE(), BirthDate)/365.25, 0) 
+FROM employees</code></pre>
+    <ol start="21">
+      <li>sowie die Anzahl der Tage bis zum nächsten Geburtstag und dessen Datum ausgibt</li>
+    </ol><pre><code>SELECT FirstName, LastName, IF(DAYOFYEAR(BirthDate)&gt;= DAYOFYEAR(CURDATE()), DAYOFYEAR(BirthDate) - DAYOFYEAR(CURDATE()), DAYOFYEAR(BirthDate) - DAYOFYEAR(CURDATE())+365) AS Anzahl_Tage, DATE_FORMAT(BirthDate, '%d.%m.') AS Geburtstag 
+FROM employees ORDER BY Anzahl_Tage</code></pre>
+    
+    <ol start="22">
+      <li>den Namen der Versandfirma, die die Bestellung 10248 ausgeliefert hat</li>
+    </ol><pre><code>SELECT CompanyName 
+FROM shippers AS v INNER JOIN orders AS b ON v.ShipperID = b.shipVia 
+WHERE OrderID = 10248</code></pre>
+    <ol start="23">
+      <li>den Namen des Mitarbeiters, der für die Bestellung 10248 zuständig ist</li>
+    </ol><pre><code>SELECT TitleOfCourtesy, FirstName, LastName 
+FROM employees INNER JOIN orders USING(EmployeeID) 
+WHERE OrderID = 10248</code></pre>
+    
+    <ol start="25">
+      <li>alle Artikel mit Namen des Artikels, Namen der Kategorie und Namen des Lieferanten ausgibt, die vom Kunden 'Ernst Handel' bestellt wurden</li>
+    </ol><pre><code>SELECT DISTINCT ProductName, CategoryName, l.CompanyName
+FROM customers INNER JOIN orders USING(CustomerID) INNER JOIN `order details` USING(OrderID) INNER JOIN products USING(ProductID) INNER JOIN categories USING(CategoryID) INNER JOIN suppliers l USING(SupplierID) 
+WHERE customers.CompanyName = 'Ernst Handel'</code></pre>
+    <ol start="26">
+      <li>alle Artikel mit der Kategorienummer 1 und den Namen des jeweiligen Lieferanten</li>
+    </ol><pre><code>SELECT ProductName, CompanyName, Address, PostalCode, City, Country 
+FROM products INNER JOIN suppliers USING(SupplierID) 
+WHERE CategoryID = 1</code></pre>
+    <ol start="27">
+      <li>die Artikel aller Lieferanten aus Deutschland</li>
+    </ol><pre><code>SELECT ProductName, CompanyName, Address, PostalCode, City, Country 
+FROM suppliers INNER JOIN products USING(SupplierID) 
+WHERE Country ='Deutschland'</code></pre>
+    
+    <ol start="29">
+      <li>alle Kunden anzeigt, die im selben Ort wie Around the Horn ansässig sind</li>
+    </ol><pre><code>SELECT k1.CompanyName, k1.City 
+FROM customers k1 INNER JOIN customers k2 USING(City) 
+WHERE k2.CompanyName = 'Around the Horn'</code></pre>
+    
+    <ol start="30">
+      <li>alle Mitarbeiter und die Namen der Vorgesetzten</li>
+    </ol><pre><code>SELECT p1.TitleOfCourtesy, p1.FirstName, p1.LastName,p2.LastName ReportsTo 
+FROM employees p1 LEFT JOIN employees p2 ON p1.ReportsTo = p2.EmployeeID</code></pre>
+    <ol start="31">
+      <li>alle Kunden anzeigt, die keine Bestellung aufgegeben haben</li>
+    </ol><pre><code>SELECT CompanyName, OrderID 
+FROM customers LEFT JOIN orders USING(CustomerID) 
+WHERE orders.CustomerID IS NULL</code></pre>
+    
+    <ol start="33">
+      <li>einen neuen Datensatz in der Tabelle Versand mit den folgenden Einträgen Firma: Pauls Paket Taxi, Telefon: 0271/</li>
+    </ol><pre><code>INSERT INTO shippers (CompanyName, Phone) VALUES ('Pauls Paket Taxi','0271/123456');</code></pre>
+    <ol start="34">
+      <li>die in der Artikeltabelle alle Einträge  "10 - 500 g pkgs" durch den' durch den Eintrag "20 - 250 g pkgs" ersetzt</li>
+    </ol><pre><code>UPDATE products SET QuantityPerUnit = "10 - 500 g pkgs" 
+WHERE QuantityPerUnit = "20 - 250 g pkgs";</code></pre>
+    <ol start="35">
+      <li>die alle Auslaufartikel aus der Artikeltabelle löscht</li>
+    </ol><pre><code>DELETE 
+FROM products 
+WHERE Discontinued = 1;</code></pre>
+    <ol start="36">
+      <li>die der Artikeltabelle das Feld Lagerort hinzufügt</li>
+    </ol><pre><code>ALTER TABLE products 
+ADD COLUMN StoragePlace int;</code></pre>
+    <ol start="37">
+      <li>für alle Artikel, die in Gläsern geliefert werden, den Lagerort auf 1 setzt.</li>
+    </ol><pre><code>UPDATE products SET StoragePlace = 1 
+WHERE QuantityPerUnit LIKE '%glasses%'</code></pre>
+    <ol start="38">
+      <li>die aus der Artikeltabelle das Feld Lagerort löscht</li>
+    </ol><pre><code>ALTER TABLE products DROP COLUMN StoragePlace;</code></pre>
+    <style>
+  pre {display:none;}
+		</style>
+  </body>
+</html>
