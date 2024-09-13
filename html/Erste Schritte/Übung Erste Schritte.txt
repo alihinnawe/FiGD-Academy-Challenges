@@ -1,7 +1,0 @@
-
-    Machen Sie sich kurz mit Absätzen und Überschriften vertraut.
-    Erstellen Sie das Grundgerüst einer HTML-Datei und fügen Sie in den `body ein:
-        eine Überschrift 1. Ordnung
-        zwei Überschriften 2. Ordnung
-        einige Absätze
-    Validieren Sie.
