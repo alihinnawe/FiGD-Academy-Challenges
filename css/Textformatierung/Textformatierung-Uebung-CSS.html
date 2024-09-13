@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="MarkdownViewer++" />
+    <title>Textformatierung-Uebung-CSS</title>		<meta name="viewport" content="width=device-width, initial-scale=1.0" />		<base target="nebenFenster"/>		<script src="../../Hilfsdateien/folien.js">		</script>		<script id="prism" src="../../Hilfsdateien/prism.js">		</script>		<style type="text/css">
+@import "../../Hilfsdateien/folien.css";
+@import "../../Hilfsdateien/prism.css";
+
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+		</style>
+  </head>
+  <body>
+    <h1 id="css-ubung-textformatierung">CSS - Übung - Textformatierung</h1>
+    <h2 id="themen">Themen</h2>
+    <ul>
+      <li>Textformatierung</li>
+      <li>Einfache Selektoren</li>
+      <li>Gruppenselektoren</li>
+    </ul>
+    <p>Ergänzen Sie die CSS-Angaben in unten angegebener Datei entsprechend.</p>
+    <h2 id="aufgabe-1">Aufgabe 1</h2>
+    <p>1. Versehen Sie alle Absätze p mit einem Einzug.</p>
+    <details>
+    <summary class="p">Selektor?</summary>
+    <p>Typselektor</p>
+    </details>
+    <details>
+    <summary class="p">Eigenschaft(en)?</summary>
+    <p>
+      <code>text-indent</code>
+    </p>
+    </details>
+    <p>2. Versehen Sie alle Überschriften h1 und h2 mit 'Times New Roman', Times oder einer ähnlichen Schriftart in einer anderen Farbe. Reduzieren Sie die Schriftgröße und sperren Sie den Text leicht.</p>
+    <details>
+    <summary class="p">Schriftgröße der Überschriften reduzieren?</summary>
+    <p>Überschriften sind größer als der 'normale' Text. Reduzieren heißt also 'nicht so groß' wie in der Standardformatierung des Browsers aber immer noch größer als die Grundschrift.</p>
+    </details>
+    <details>
+    <summary class="p">Schrift sperren?</summary>
+    <p>Hervorhebung von Textteilen durch Vergrößerung der Abstände zwischen den einzelnen Buchstaben.</p>
+    </details>
+    <details>
+    <summary class="p">Selektor?</summary>
+    <p>Gruppenselektor</p>
+    </details>
+    <details>
+    <summary class="p">Eigenschaft(en)?</summary>
+    <p>
+      <code>font-family, font-size, color, letter-spacing</code>
+    </p>
+    </details>
+    <p>Validieren Sie zunächst den HTML-Code und dann die CSS-Angaben. .</p>
+    <details>
+    <summary class="p">Tipps zur CSS-Validierung:</summary>
+    <ul>
+      <li>Upload im Validator unter unten genannter Adresse oder</li>
+      <li>die Webkonsole von Firefox verwenden
+<ul><li>Extras &gt; Webentwickler &gt; Webkonsole bzw. F12</li><li>Registerkarte Konsole auswählen</li><li>Sicherstellen, dass Button CSS aktiv ist</li><li>evtl. zu prüfende Seite neu aufrufen F5</li><li>Fehlerangaben zu CSS (blau) auswerten</li></ul></li>
+    </ul>
+    </details>
+    <p>Vergleichen Sie das Aussehen mit der Vorlage.</p>
+    <h2 id="aufgabe-2">Aufgabe 2</h2>
+    <p>Versehen Sie alle Absätze der Klasse warnung zusätzlich mit diktengleicher fetter und kursiver Schrift.</p>
+    <details>
+    <summary class="p">Selektor?</summary>
+    <p>(der vorhandene) Klassenselektor</p>
+    </details>
+    <details>
+    <summary class="p">Eigenschaft(en)?</summary>
+    <p>
+      <code>font-family, font-style, font-weight</code>
+    </p>
+    </details>
+    <p>Validieren Sie.</p>
+    <p>Vergleichen Sie das Aussehen mit der Vorlage.</p>
+    <h2 id="aufgabe-3">Aufgabe 3</h2>
+    <p>1. Versehen Sie alle Listenpunkte mit einem größeren Zeilenabstand und verhindern Sie Umbrüche.</p>
+    <details>
+    <summary class="p">Selektor?</summary>
+    <p>Typselektor</p>
+    </details>
+    <details>
+    <summary class="p">Eigenschaft(en)?</summary>
+    <p>
+      <code>line-height, white-space</code>
+    </p>
+    </details>
+    <p>2. Unterdrücken Sie für alle Links a die Unterstreichung.</p>
+    <details>
+    <summary class="p">Selektor?</summary>
+    <p>Typselektor</p>
+    </details>
+    <details>
+    <summary class="p">Eigenschaft(en)?</summary>
+    <p>
+      <code>text-decoration</code>
+    </p>
+    </details>
+    <p>Validieren Sie.</p>
+    <p>Vergleichen Sie das Aussehen mit der Vorlage.</p>
+    <h2 id="aufgabe-4">Aufgabe 4</h2>
+    <ul>
+      <li>Versehen Sie die Absätze <code>p</code> und das Zitat <code>blockquote</code> mit unterschiedlichen Google-Webfont-Schriften.</li>
+      <li>Validieren Sie.</li>
+      <li>Überprüfen Sie das Aussehen.</li>
+    </ul>
+    <h2 id="aufgabe-5">Aufgabe 5</h2>
+    <ul>
+      <li>Versehen Sie alle Überschriften h1 und h2 mit einem Schriftschatten.</li>
+      <li>Validieren Sie.</li>
+    </ul>
+    <details>
+    <summary class="p">Schriftschatten?</summary>
+    <p>Suchen Sie im WWW.</p>
+    </details>
+    
+  </body>
+</html>

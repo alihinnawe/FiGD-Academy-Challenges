@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schriftformatierung</title>
+    <style>
+      body {
+        font-family:Arial,Helvetica,sans-serif;
+      }
+      h1, h2 {
+        font-family:Times, 'Times New Roman', serif;
+        color:#009;
+        letter-spacing:.05em;
+      } 
+      h1 {
+        font-size:1.4rem;
+      }    
+      h2 {
+        font-size:1.2rem;
+      }    
+      p {
+        text-indent:1em;
+        color:#333;
+      }
+      .warnung {       
+        color:#009;
+        background-color:#ff0;
+        padding:.3em;
+        border:2px #009 solid; 
+        font-family:Courier, 'Courier New', monospace;
+        font-style:italic;
+        font-weight:bold;
+      }  
+      
+/* Aufgabe 03 */
+      li {
+        line-height:1.6;
+        white-space:nowrap;
+      }
+
+      a {
+        text-decoration:none;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Übung zur Schriftformatierung</h1>
+    </header>
+    <nav>
+      <h2 id="ivz">Inhaltsverzeichnis</h2>
+      <ul>
+        <li>
+          <a href="#kap01">Kapitel 1</a>
+        </li>
+        <li>
+          <a href="#kap02">Kapitel 2</a>
+        </li>
+        <li>
+          <a href="#kap03">Kapitel 3</a>
+        </li>    
+        <li>
+          <a href="#q">Quellen</a>
+        </li>    
+      </ul>
+    </nav>
+
+    <section>
+      <h2 id="kap01">
+        Kapitel 1&#160;<a href="#ivz">&#8657;</a>
+      </h2>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </p>
+      <blockquote>
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </blockquote>  
+      <p>
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="kap02">
+        Kapitel 2&#160;<a href="#ivz">&#8657;</a>
+      </h2>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </p>
+      <p>
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </p>  
+      <p class="warnung">
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="kap03">
+        Kapitel 3&#160;<a href="#ivz">&#8657;</a>
+      </h2>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </p>
+      <p>
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </p>  
+      <p class="warnung">
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </p>
+    </section>
+
+    <footer>
+      <h2 id="q">
+        Quellen&#160;<a href="#ivz">&#8657;</a>
+      </h2>
+      <ul>
+        <li>
+          <a target="nebenFenster" href="https://www.loremipsum.de/">Lorem-Ipsum-Generator</a>
+        </li>
+        <li>
+          <a target="nebenFenster" href="http://webkompetenz.wikidot.com/html-handbuch:links-anker#toc2">HTML5-Handbuch » Hyperlinks » Aufbau von Hyperlinks » Links und Anker » Weitere Hinweise</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
