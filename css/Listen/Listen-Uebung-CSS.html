@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="MarkdownViewer++">
+    <title>Listen-Uebung-CSS</title>		<meta name="viewport" content="width=device-width, initial-scale=1.0">		<base target="nebenFenster">		<script src="../../Hilfsdateien/folien.js">		</script>		<script id="prism" src="../../Hilfsdateien/prism.js">		</script>		<style type="text/css">
+@import "../../Hilfsdateien/folien.css";
+@import "../../Hilfsdateien/prism.css";
+
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+		</style>
+  </head>
+  <body>
+    <h1 id="css-ubung-listen">CSS - Übung - Listen</h1>
+    <h2 id="themen">Themen</h2>
+    <ul>
+      <li>Listenformatierung</li>
+    </ul>
+    <h2 id="aufgabe-1">Aufgabe 1</h2>
+    <p>Übernehmen Sie die unten angegebenen HTML-Datei und formatieren Sie die Listen mittels CSS nach folgenden Vorgaben.</p>
+    <ul>
+      <li>Die nummerierte Liste erhält eine Nummerierung mit kleinen römischen Zahlen.</li>
+      <li>Die in ihr verschachtelte Liste erhält eine 'Nummerierung' mit a, b ....</li>
+      <li>Die Aufzählungsliste erhält die unten angegebene Grafik als Aufzählungszeichen.</li>
+      <li>Die Aufzählungszeichen sind im Text eingerückt.</li>
+      <li>Validieren Sie.</li>
+      <li>Vergleichen Sie das Aussehen mit der Vorlage.</li>
+    </ul>
+    <details>
+    <summary class="p">Auswahl der verschachtelten Liste?</summary>
+    <p>über den Nachkommen-Selektor <code>ol ol {...}</code></p>
+    <details>
+    <summary class="p">?</summary>
+    <ul>
+      <li>
+        <code>ol ol {...}</code>
+        <br>
+(eine nummerierte Liste die sich in einer nummerierten Liste befindet.</li>
+    </ul>
+    </details>
+    </details>
+    <h2 id="download">Download</h2>
+    <ul>
+      <li>
+        <a href="Listen-Uebung-CSS/Listen_CSS.html">Ausgangsdatei</a>
+      </li>
+      <li>
+        <a href="Listen-Uebung-CSS/bullet.gif">Bullet-Grafik</a>
+      </li>
+    </ul>
+    <h2 id="vorlage">Vorlage</h2>
+    <ul>
+      <li>
+        <a href="Listen-Uebung-CSS/Listen_CSS.pdf">PDF</a>
+      </li>
+    </ul>
+  </body>
+</html>
