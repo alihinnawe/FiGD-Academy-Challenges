@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pseudoklassen und -elemente</title>
+  </head>
+  <body>
+    <table class="selectorsReview">
+      <caption>The following table summarizes the Selector syntax:</caption>
+      <thead>
+        <tr>
+          <th>Pattern</th>
+          <th>Meaning</th>
+          <th>Described in section</th>
+          <th>First defined in CSS level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>*</td>
+          <td>any element</td>
+          <td>
+            <a href="#universal-selector">Universal selector</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E</td>
+          <td>an element of type E</td>
+          <td>
+            <a href="#type-selectors">Type selector</a>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>E[foo]</td>
+          <td>an E element with a "foo" attribute</td>
+          <td>
+            <a href="#attribute-selectors">Attribute selectors</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E[foo="bar"]</td>
+          <td>an E element whose "foo" attribute value is exactly equal to "bar"</td>
+          <td>
+            <a href="#attribute-selectors">Attribute selectors</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E[foo~="bar"]</td>
+          <td>an E element whose "foo" attribute value is a list of whitespace-separated values, one of which is exactly equal to "bar"</td>
+          <td>
+            <a href="#attribute-selectors">Attribute selectors</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E[foo^="bar"]</td>
+          <td>an E element whose "foo" attribute value begins exactly with the string "bar"</td>
+          <td>
+            <a href="#attribute-selectors">Attribute selectors</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E[foo$="bar"]</td>
+          <td>an E element whose "foo" attribute value ends exactly with the string "bar"</td>
+          <td>
+            <a href="#attribute-selectors">Attribute selectors</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E[foo*="bar"]</td>
+          <td>an E element whose "foo" attribute value contains the substring "bar"</td>
+          <td>
+            <a href="#attribute-selectors">Attribute selectors</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E[foo|="en"]</td>
+          <td>an E element whose "foo" attribute has a hyphen-separated list of values beginning (from the left) with "en"</td>
+          <td>
+            <a href="#attribute-selectors">Attribute selectors</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E:root</td>
+          <td>an E element, root of the document</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:nth-child(n)</td>
+          <td>an E element, the n-th child of its parent</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:nth-last-child(n)</td>
+          <td>an E element, the n-th child of its parent, counting from the last one</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:nth-of-type(n)</td>
+          <td>an E element, the n-th sibling of its type</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:nth-last-of-type(n)</td>
+          <td>an E element, the n-th sibling of its type, counting from the last one</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:first-child</td>
+          <td>an E element, first child of its parent</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E:last-child</td>
+          <td>an E element, last child of its parent</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:first-of-type</td>
+          <td>an E element, first sibling of its type</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:last-of-type</td>
+          <td>an E element, last sibling of its type</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:only-child</td>
+          <td>an E element, only child of its parent</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:only-of-type</td>
+          <td>an E element, only sibling of its type</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:empty</td>
+          <td>an E element that has no children (including text nodes)</td>
+          <td>
+            <a href="#structural-pseudos">Structural pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:link<br/> E:visited</td>
+          <td>an E element being the source anchor of a hyperlink of which the target is not yet visited (:link) or already visited (:visited)</td>
+          <td>
+            <a href="#link">The link pseudo-classes</a>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>E:active<br/> E:hover<br/> E:focus</td>
+          <td>an E element during certain user actions</td>
+          <td>
+            <a href="#useraction-pseudos">The user action pseudo-classes</a>
+          </td>
+          <td>1 and 2</td>
+        </tr>
+        <tr>
+          <td>E:target</td>
+          <td>an E element being the target of the referring URI</td>
+          <td>
+            <a href="#target-pseudo">The target pseudo-class</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:lang(fr)</td>
+          <td>an element of type E in language "fr" (the document language specifies how language is determined)</td>
+          <td>
+            <a href="#lang-pseudo">The :lang() pseudo-class</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E:enabled<br/> E:disabled</td>
+          <td>a user interface element E which is enabled or disabled</td>
+          <td>
+            <a href="#UIstates">The UI element states pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E:checked<!--<br/>E:indeterminate-->
+          </td>
+          <td>a user interface element E which is checked<!-- or in an indeterminate state--> (for instance a radio-button or checkbox)</td>
+          <td>
+            <a href="#UIstates">The UI element states pseudo-classes</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E::first-line</td>
+          <td>the first formatted line of an E element</td>
+          <td>
+            <a href="#first-line">The ::first-line pseudo-element</a>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>E::first-letter</td>
+          <td>the first formatted letter of an E element</td>
+          <td>
+            <a href="#first-letter">The ::first-letter pseudo-element</a>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>E::before</td>
+          <td>generated content before an E element</td>
+          <td>
+            <a href="#gen-content">The ::before pseudo-element</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E::after</td>
+          <td>generated content after an E element</td>
+          <td>
+            <a href="#gen-content">The ::after pseudo-element</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E.warning</td>
+          <td>an E element whose class is "warning" (the document language specifies how class is determined).</td>
+          <td>
+            <a href="#class-html">Class selectors</a>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>E#myid</td>
+          <td>an E element with ID equal to "myid".</td>
+          <td>
+            <a href="#id-selectors">ID selectors</a>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>E:not(s)</td>
+          <td>an E element that does not match simple selector s</td>
+          <td>
+            <a href="#negation">Negation pseudo-class</a>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>E F</td>
+          <td>an F element descendant of an E element</td>
+          <td>
+            <a href="#descendant-combinators">Descendant combinator</a>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>E &gt; F</td>
+          <td>an F element child of an E element</td>
+          <td>
+            <a href="#child-combinators">Child combinator</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E + F</td>
+          <td>an F element immediately preceded by an E element</td>
+          <td>
+            <a href="#adjacent-sibling-combinators">Adjacent sibling combinator</a>
+          </td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>E ~ F</td>
+          <td>an F element preceded by an E element</td>
+          <td>
+            <a href="#general-sibling-combinators">General sibling combinator</a>
+          </td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Tabelle aus <a href="https://www.w3.org/TR/selectors-3/">Selectors Level 3 - W3C Recommendation 29 September 2011</a>
+    </p>
+  </body>
+</html>
