@@ -1,0 +1,52 @@
+Hypertext Markup Language
+
+Die Hypertext Markup Language (englisch für Hypertext-Auszeichnungssprache), abgekürzt HTML, ist eine textbasierte Auszeichnungssprache zur Strukturierung digitaler Dokumente wie Texte mit Hyperlinks, Bildern und anderen Inhalten. HTML-Dokumente sind die Grundlage des World Wide Web und werden von Webbrowsern dargestellt. Neben den vom Browser angezeigten Inhalten können HTML-Dateien zusätzliche Angaben in Form von Metainformationen enthalten, z. B. über die im Text verwendeten Sprachen, den Autor oder den zusammengefassten Inhalt des Textes. 
+
+HTML wird vom World Wide Web Consortium (W3C) und der Web Hypertext Application Technology Working Group (WHATWG) weiterentwickelt.
+
+Entstehung
+
+Vor der Entwicklung des World Wide Web und dessen Bestandteilen, zu denen auch HTML gehört, war es nicht möglich, Informationen auf digitalem Weg einfach, schnell und strukturiert zwischen mehreren Personen auszutauschen.  Man benötigte neben Übertragungsprotokollen auch eine einfach zu verstehende Textauszeichnungssprache. Genau hier lag der Ansatzpunkt von HTML. Um Forschungsergebnisse mit anderen Mitarbeitern der Europäischen Organisation für Kernforschung (CERN) zu teilen und von den beiden Standorten in Frankreich und in der Schweiz aus zugänglich zu machen, entstand 1989 am CERN ein Projekt, welches sich mit der Lösung dieser Aufgabe beschäftigte. Am 3. November 1992 erschien die erste Version der HTML-Spezifikation. 
+
+Syntax
+
+Dem Text wird durch Auszeichnungen (englisch markup) von Textteilen eine Struktur verliehen. Die Auszeichnung erfolgt durch SGML-Elemente. Die meisten dieser HTML-Elemente werden durch ein Tag-Paar markiert, das heißt durch einen Starttag und einen Endtag. 
+
+W3C-Veröffentlichungen zu HTML5
+
+ Datum            | Veröffentlichungen
+------------------+--------------------
+  22. Januar 2008 | 1. Arbeitsentwurf
+    10. Juni 2008 | 2. Arbeitsentwurf
+ 12. Februar 2009 | 3. Arbeitsentwurf
+   23. April 2009 | 4. Arbeitsentwurf
+  25. August 2009 | 5. Arbeitsentwurf
+     4. März 2010 | 6. Arbeitsentwurf
+              ... | ...
+
+
+Gedichte über das WWW
+
+LOL - Love Online
+
+An meinem Rechner sitz ich nun
+Das Chatten läßt mir keine Ruh!
+Zu viele Leute sind im Raum,
+Mit schrägen Nicks - man glaubt es kaum.
+
+...
+
+Unbekannt
+
+Von Melle
+
+--------------------------------
+
+World Wide Web nominiert für Friedensnobelpreis
+(Zitat aus https://www.welt.de/politik/ausland/article6742517/World-Wide-Web-nominiert-fuer-Friedensnobelpreis.html)
+
+Die Welt meldet am 12.03.2010
+
+"Das Internet wurde für den diesjährigen Friedensnobelpreis vorgeschlagen und gehört damit zu den Nominierten. Die Initiative dazu kam aus Italien und wird von namhaften Persönlichkeiten unterstützt, unter anderen von der Preisträgerin des Jahres 2003. Das Nobelinstitut bestätigte die Kandidatur als regelkonform. "
+
+
