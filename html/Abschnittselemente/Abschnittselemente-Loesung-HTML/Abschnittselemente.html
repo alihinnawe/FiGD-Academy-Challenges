@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Abschnittselemente Lösung - HTML</title>
+    <style>
+      div {
+        border:2px solid #f00;
+        padding:.5em;
+        margin:.5em;
+      }
+      section, 
+      article, 
+      header, 
+      footer, 
+      nav, 
+      aside, 
+      address {
+        border:2px solid #000;
+        padding:.5em;
+        margin:.5em;
+      }
+      header:first-child, 
+      body > *:first-child > nav, 
+      article:nth-child(2), 
+      article:nth-child(3), 
+      article:nth-child(4), 
+      footer:last-child {
+        border:2px solid #0f0;
+        padding:.5em;
+        margin:.5em;
+      }
+		</style>
+  </head>
+  <body>
+    <header>
+      <h1>Internetprogrammierung</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#HTML5">HTML5</a>
+          </li>
+          <li>
+            <a href="#CSS">CSS</a>
+          </li>
+          <li>
+            <a href="#JavaScript">JavaScript</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <article>
+      <h2 id="HTML5">HTML5</h2>
+      <p>HTML5 ist die fünfte Fassung der Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache), einer Computersprache zur Auszeichnung und Vernetzung von Texten und anderen Inhalten elektronischer Dokumente, vorwiegend im World Wide Web.</p>
+    </article>
+    <article>     
+      <h2 id="CSS">CSS</h2>        
+      <p>Cascading Style Sheets (englisch für gestufte Gestaltungsbögen), kurz CSS genannt, ist eine Stylesheet-Sprache für elektronische Dokumente und zusammen mit HTML und DOM eine der Kernsprachen des World Wide Webs. Sie ist ein sogenannter „living standard“ (lebendiger Standard) und wird vom World Wide Web Consortium (W3C) beständig weiterentwickelt. Mit CSS werden Gestaltungsanweisungen erstellt, die vor allem zusammen mit den Auszeichnungssprachen HTML und XML (zum Beispiel bei SVG) eingesetzt werden.</p>
+    </article>
+    <article>     
+      <h2 id="JavaScript">JavaScript</h2>        
+      <p>JavaScript (kurz JS) ist eine Skriptsprache, die ursprünglich 1995 von Netscape für dynamisches HTML in Webbrowsern entwickelt wurde, um Benutzerinteraktionen auszuwerten, Inhalte zu verändern, nachzuladen oder zu generieren und so die Möglichkeiten von HTML und CSS zu erweitern. Heute findet JavaScript auch außerhalb von Browsern Anwendung, so etwa auf Servern und in Microcontrollern.</p>
+    </article>
+    <footer>
+      <a href="#">Impressum</a>
+      <p>Aus Wikipedia zitiert</p>
+    </footer>
+  </body>
+</html>
