@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabellen Übung - CSS</title>
+    <style>
+      table {
+        caption-side:bottom;
+      }
+      table, th, td {
+        border: 1px solid blue;
+        border-collapse:collapse;
+      }
+      th, td, caption {
+        padding:.5em;
+      }
+      thead, tfoot {
+        color:blue;
+        font-weight:bold;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+    <caption>Immobilienangebot</caption>
+      <thead>
+        <tr>
+          <td> </td>
+          <th>Haus A</th>
+          <th>Haus B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Wohnfläche</th>
+          <td>100</td>
+          <td>150</td>
+        </tr>
+        <tr>
+          <th>Gartenfläche</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Gesamtfläche</th>
+          <td>150</td>
+          <td>250</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
