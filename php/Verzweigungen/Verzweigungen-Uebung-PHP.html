@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="MarkdownViewer++">
+    <title>Verzweigungen-Uebung-PHP</title>		<meta name="viewport" content="width=device-width, initial-scale=1.0">		<base target="nebenFenster">		<script src="../../Hilfsdateien/folien.js">		</script>		<script id="prism" src="../../Hilfsdateien/prism.js">		</script>		<style type="text/css">
+@import "../../Hilfsdateien/folien.css";
+@import "../../Hilfsdateien/prism.css";
+
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+		</style>
+  </head>
+  <body>
+    <h1 id="php-ubung-verzweigungen">PHP-Übung - Verzweigungen</h1>
+    <h2 id="aufgabe-01">Aufgabe 01</h2>
+    <ul>
+      <li>Schreiben Sie ein Formular zur Eingabe einer Jahreszahl.</li>
+      <li>Bei Klick auf Absendebutton wird eine <em>zweite</em> Seite aufgerufen, die die Eingabe auf Schaltjahr prüft und eine Ausgabe in der Form '2200 ist kein Schaltjahr' erzeugt.</li>
+    </ul>
+    <h2 id="aufgabe-02">Aufgabe 02</h2>
+    <ul>
+      <li>Schreiben Sie ein Formular zur Eingabe einer Monatszahl.</li>
+      <li>Bei Klick auf Absendebutton wird die die Anzahl der Tage in diesem Monat ermittelt und auf der <em>gleichen</em> Seite ausgegeben. Geben Sie für den Februar immer 28 Tage aus.</li>
+    </ul>
+    <h2 id="aufgabe-03">Aufgabe 03</h2>
+    <ul>
+      <li>Verpacken Sie die Ermittlung des Schaltjahres aus Aufgabe 01 in eine Funktion.</li>
+      <li>Benutzen Sie diese Funktion in der Lösung zu Aufgabe 02 um den Wert zum Februar korrekt anzupassen.</li>
+      <li>Verpacken Sie nun auch die Ermittlung der Monatstage in eine Funktion und verwenden Sie diese zur Ausgabe.</li>
+      <li>Im Formular muss jetzt natürlich Monat <em>und</em> Jahr eingegeben werden.</li>
+    </ul>
+    <h2 id="demo">Demo</h2>
+    <ul>
+      <li>
+        <a href="../Loesungen/Verzweigungen_Loesung_PHP/Schaltjahr_Seite1.html">Aufgabe 01</a>
+      </li>
+      <li>
+        <a href="../Loesungen/Verzweigungen_Loesung_PHP/Monatstage.php">Aufgabe 02</a>
+      </li>
+      <li>
+        <a href="../Loesungen/Verzweigungen_Loesung_PHP/Monatstage_korrekt.php">Aufgabe 03</a>
+      </li>
+    </ul>
+  </body>
+</html>
