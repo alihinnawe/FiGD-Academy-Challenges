@@ -1,0 +1,16 @@
+    <p>Ich möchte betonen:     HTML dient nur der Strukturierung der Webseite.     </p>
+
+    <p>Besonders möchte ich hervorheben:     Nur valides HTML garantiert die korrekte Interpretation auf allen Browsern!     </p>
+
+    <p>Mit     F5     aktualisieren Sie die Anzeige im Browserfenster.</p>
+
+    <p> Das Programm meldet:     Validierung erfolgreich!     </p>
+
+    <!-- Zeichnen Sie HTML als Begriff aus der anschließend erklärt wird -->
+    <p>     HTML     ist die Standardsprache zum Erstellen von Webseiten.</p>
+
+    <!-- Zeichnen Sie WHO als Abkürzung aus
+    Verwenden Sie das Universalattribut 'title' um die Langform 'World Health Organization' anzugeben -->
+    <p>Die     WHO     wurde 1948 gegründet.</p>
+
+    <p>In der bekannten Gleichung zur Äquivalenz von Masse und Energie stehen die Variablen     E     für die Ruheenergie,     m     für die Masse und     c     für die Lichtgeschwindigkeit.</p>
