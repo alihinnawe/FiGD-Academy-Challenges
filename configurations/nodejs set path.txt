@@ -1,0 +1,2 @@
+setx NODE_PATH "C:\nodejs\node_modules"
+setx PATH "$PATH;C:\nodejs\bin"

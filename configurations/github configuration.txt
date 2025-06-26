@@ -1,0 +1,25 @@
+Step 1: Install Git
+https://git-scm.com/downloads/win
+
+Step 2: Configure Git
+git config --global user.name "Ali Hinnawe	"
+git config --global user.email "hinnaweali@gmail.com"
+
+Step 3: Generate SSH Key
+ssh-keygen -t ed25519 -C "hinnaweali@gmail.com"
+
+Step 4: Add SSH Key to the SSH Agent
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+Step 5: Add SSH Key to GitHub
+cat ~/.ssh/id_ed25519.pub | clip
+ssh/id_ed25519.pub
+
+
+Go to your GitHub account settings.
+In the "SSH and GPG keys" section, click New SSH Key.
+In the "Title" field, give your key a name (e.g., "My Laptop").
+Paste the SSH public key that you copied earlier into the "Key" field.
+Click Add SSH Key.
+

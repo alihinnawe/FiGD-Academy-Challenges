@@ -1,0 +1,23 @@
+blogPHP login problems:
+
+Solution 1: Check if the User Exists
+
+SELECT User, Host FROM mysql.user WHERE User = 'blog';
+
+CREATE USER 'rentease'@'localhost' IDENTIFIED BY 'root';
+GRANT ALL PRIVILEGES ON blog.* TO 'blog'@'localhost';
+FLUSH PRIVILEGES;
+
+CREATE USER 'rentease'@'localhost' IDENTIFIED BY 'root';
+
+
+
+
+<?php
+$hashedPasswordUser = password_hash('ali', PASSWORD_DEFAULT);
+echo $hashedPasswordUser; // Copy this and use it in your database
+?>
+
+UPDATE admin 
+SET password = 'your hashed password' 
+WHERE user_name = 'admin@example.com';

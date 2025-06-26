@@ -1,0 +1,31 @@
+1. Change the Port for XAMPP MySQL
+You can configure XAMPP to use a different port for MySQL.
+
+Open XAMPP Control Panel: If you haven't already, open the XAMPP Control Panel.
+
+Stop XAMPP MySQL service: If it is running, click the Stop button next to the MySQL service.
+
+Open my.ini file:
+
+In the XAMPP Control Panel, click the Config button next to MySQL.
+Choose my.ini from the list. This file contains the configuration for MySQL.
+Change the port:
+
+In the my.ini file, search for port=3306.
+Change 3306 to a different port, e.g., 3307 (or another available port).
+ini
+Kopieren
+Bearbeiten
+[mysqld]
+port=3307
+
+
+2. Adding the Port Configuration
+Locate the section for server configuration: In your config.inc.php file, under the $cfg['Servers'][$i] section, you can add a port configuration.
+
+Add the port parameter: If you are using a different port (for example, 3307), you can specify it as follows:
+
+php
+Kopieren
+Bearbeiten
+$cfg['Servers'][$i]['port'] = '3307';  // Replace with the correct port
