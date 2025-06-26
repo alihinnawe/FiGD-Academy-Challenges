@@ -1,5 +1,5 @@
 https://windows.php.net/download/
 
-download the zip php and extract it to c:\php
+download the php zip file and extract it to c:\php
 
 go to settings -> Double click the PHP tab -> add cli interpreter C:\xampp\php\php.exe
